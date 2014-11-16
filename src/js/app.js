@@ -13,6 +13,7 @@ sync();
 function sync() {
     var opts = { live: true };
     db.replicate.from(remoteCouch, opts, syncError);
+    db.replicate.to(remoteCouch, opts, syncError);
 }
 
 function syncError() {
