@@ -3,11 +3,11 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         browserify: {
-            options: {
-                browserifyOptions: {
-                    debug: true
-                }
-            },
+            //options: {
+            //    browserifyOptions: {
+            //        debug: true
+            //    }
+            //},
             dist: {
                 files: {
                     'dist/app.js': ['src/js/app.js']
@@ -22,6 +22,12 @@ module.exports = function(grunt) {
                         cwd: 'src/',
                         expand: true,
                         src: 'index.html',
+                        dest: 'dist/'
+                    },
+                    {
+                        cwd: 'src/',
+                        expand: true,
+                        src: 'manifest.appcache',
                         dest: 'dist/'
                     },
                     {
