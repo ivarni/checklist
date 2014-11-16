@@ -1,0 +1,11 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-top: 10px;
+}
+
+.topcoat-checkbox__checkmark {
+    margin-right: 10px;
+}
