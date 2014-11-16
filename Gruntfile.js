@@ -15,6 +15,17 @@ module.exports = function(grunt) {
             }
         },
 
+        uglify: {
+            options: {
+                mangle: true
+            },
+            dist: {
+                files: {
+                    'dist/app.js': ['dist/app.js']
+                }
+            }
+        },
+
         copy: {
             dist: {
                 files: [
@@ -43,7 +54,7 @@ module.exports = function(grunt) {
         watch: {
             src: {
                 files: ['src/**/*'],
-                tasks: ['browserify', 'copy']
+                tasks: ['browserify', 'uglify', 'copy']
             }
         }
 
@@ -51,8 +62,9 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('default', ['browserify', 'copy']);
+    grunt.registerTask('default', ['browserify', 'uglify', 'copy']);
 
 }
